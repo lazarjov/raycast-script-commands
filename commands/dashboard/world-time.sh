@@ -15,10 +15,18 @@
 # @raycast.author Jesse Claven
 # @raycast.authorURL https://github.com/jesse-c
 
+# 2023-07-16:
+# Script updated by @lazarjov to use with different cities
+
 # Timezones can be found in /usr/share/zoneinfo
 
-nyc=$(TZ=America/New_York date +"%H:%M")
-lon=$(TZ=Europe/London date +"%H:%M")
-bne=$(TZ=Australia/Brisbane date +"%H:%M")
+# Choose format:
 
-echo "New York City: $nyc | London: $lon | Brisbane: $bne"
+# format="%H:%M" # 24-hour format
+format="%-I:%M %p" # 12-hour format
+
+van=$(TZ=America/Vancouver date +"$format")
+tor=$(TZ=America/Toronto date +"$format")
+beg=$(TZ=Europe/Belgrade date +"$format")
+
+echo "Vancouver: $van | Toronto: $tor | Belgrade: $beg"
