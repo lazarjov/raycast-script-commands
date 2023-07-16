@@ -7,7 +7,7 @@
 
 # Optional parameters:
 # @raycast.icon 🔍
-# @raycast.argument1 { "type": "text", "optional": true, "placeholder": "Folder" }
+# @raycast.argument1 { "type": "text", "placeholder": "Desktop", "optional": true }
 # @raycast.packageName Navigation
 
 # Documentation:
@@ -18,7 +18,7 @@
 LOCATION=$1
 
 if ! [[ "$LOCATION" =~ ^/ ]]; then
-  LOCATION="$HOME/$LOCATION"
+  LOCATION="$HOME/Desktop"
 fi
 
 open "$LOCATION"
